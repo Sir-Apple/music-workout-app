@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card } from './components/Card'
+import Card from './components/Card'
 
 const App = () => {
   const [musicNumber, setMusicNumber] = useState(0)
