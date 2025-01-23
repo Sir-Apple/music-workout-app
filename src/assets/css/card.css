@@ -3,3 +3,85 @@
     overflow: hidden;
     padding: 25px;
 }
+
+.card .nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .img{
+    width: 100%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card .img img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card .details{
+    width: 100%;
+    text-align: center;
+}
+
+.card .details .artist{
+    color: #bbb;
+}
+
+.card .progress{
+    margin-top: 15px;
+}
+
+.card .progress input{
+    width: 100%;
+    height: 4px;
+}
+
+.card .timer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.card .controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.card .controls #prev,
+.card .controls #next{
+    font-size: 2.5rem;
+}
+
+.card .controls .play{
+    width: 3.2rem;
+    height: 3.2rem;
+    background: linear-gradient(#fff 0%, #cecaca 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card .controls .play::before{
+    content: '';
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: inherit;
+    background: linear-gradient(green, darkgreen 100%);
+}
