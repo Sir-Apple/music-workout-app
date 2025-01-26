@@ -2,13 +2,16 @@ import React from 'react'
 import '../assets/css/card.css'
 import musics from '../assets/data'
 
-const Card = ({props: { musicNumber, setMusicNumber }}) => {
+const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
   return (
     <div className='card'>
         <div className='nav'>
             <i className="material-icons">expand_more</i>
+
             <span>Now Playing {musicNumber + 1}/{musics.length}</span>
-            <i className="material-icons">queue_music</i>
+
+            <i className="material-icons" 
+            onClick={() => setOpen(prev => !prev)}>queue_music</i>
         </div>
         <div className='img'>
             <img src={musics[musicNumber].thumbnail} alt="" />
@@ -32,6 +35,11 @@ const Card = ({props: { musicNumber, setMusicNumber }}) => {
             </div>
             <i className='material-icons' id='next'>skip_next</i>
             <i className='material-icons' id='next'>volume_up</i>
+            <div className="volume">
+                <i className='material-icons' id='next'>volume_up</i>
+                <input type="range" min={0} max={100} />
+                <span>50</span>
+            </div>
         </div>
         <audio src={musics[musicNumber].src} hidden></audio>
     </div>

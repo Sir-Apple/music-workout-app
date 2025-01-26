@@ -85,3 +85,37 @@
     border-radius: inherit;
     background: linear-gradient(green, darkgreen 100%);
 }
+
+.card .controls .play i{
+    background: #30fe6c;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+}
+
+.card .controls .volume{
+    width: 100%;
+    height: 50px;
+    background: #333;
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    border-radius: 10px;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    z-index: 5;
+    transition: bottom 0.2s linear;
+}
+
+.card .controls .volume.show{
+    bottom: 0; 
+}
+
+.card .controls .volume input{
+    width: 100%;
+    height: 4px;
+}
