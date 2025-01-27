@@ -5,8 +5,11 @@ import { timer } from '../utils/timer';
 
 const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
     const [duration, setDuration] = useState(1);
-    const[currentTime, setCurrentTime] = useState(0);
-    const[play, setPlay] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [play, setPlay] = useState(false);
+    const [volume, setVolume] = useState(50);
+    const [showVolume, setShowVolume] = useState(false);
+    const [repeat, setRepeat] = useState('repeat');
 
     const audioRef = useRef()
 
@@ -18,7 +21,8 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
                 setDuration(audio.duration)
             }
         }
-        console.log(e.nativeEvent.srcElement.src)
+        
+        if(play) { audioRef.current.play() }
     }
 
     function handlePlayingAudio(){
@@ -50,6 +54,52 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
         })
     }
 
+    useEffect(() => {
+        audioRef.current.volume = volume / 100
+    }, [volume])
+
+    function handleRepeat(){
+        setRepeat(value => {
+            switch (value) {
+                case 'repeat':
+                    return 'repeat_one'
+
+                case 'repeat_one':
+                    return 'shuffle'
+
+                default:
+                    return 'repeat'
+            }
+        })
+    }
+
+    function EndedAudio(){
+        switch (repeat) {
+            case 'repeat_one':
+                return audioRef.current.play()
+
+            case 'shuffle':
+                return handleShuffle();
+
+            default:
+                return handleNextPrev(1);
+
+        }
+    }
+
+    function handleShuffle(){
+        const num = randomNumber()
+        setMusicNumber(num)
+    }
+
+    function randomNumber(){
+        const number = Math.floor(Math.random() * (musics.length - 1))
+        if(number === musicNumber)
+            return randomNumber()
+
+        return number
+    }
+
     return (
         <div className='card'>
             <div className='nav'>
@@ -76,7 +126,9 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
                 <span>{timer(duration)}</span>
             </div>
             <div className="controls">
-                <i className='material-icons'>repeat</i>
+                <i className='material-icons' onClick={handleRepeat}>
+                    {repeat}
+                </i>
                 <i className='material-icons' id='prev'
                 onClick={() => handleNextPrev(-1)}>skip_previous</i>       
                 <div className="play" onClick={handlePlayingAudio}>
@@ -86,15 +138,21 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
                 </div>
                 <i className='material-icons' id='next' 
                 onClick={() => handleNextPrev(1)}>skip_next</i>
-                <i className='material-icons'>volume_up</i>
-                <div className="volume">
-                    <i className='material-icons' id='next'>volume_up</i>
-                    <input type="range" min={0} max={100} />
-                    <span>50</span>
+
+                <i className='material-icons'
+                onClick={() => setShowVolume(prev => !prev)}>volume_up</i>
+                <div className={`volume ${showVolume ? 'show' : ''}`}>
+                    <i className='material-icons' onClick={() => setVolume(v => v > 0 ? 0 : 100)}>
+                        { volume === 0 ? 'volume_off' : 'volume_up'}
+                    </i>
+                    <input type="range" min={0} max={100} value={volume}
+                    onChange={e => setVolume(Number(e.target.value))}/>
+                    <span>{volume}</span>
                 </div>
             </div>
             <audio src={musics[musicNumber].src} hidden ref={audioRef}
-            onLoadStart={handleLoadStart} onTimeUpdate={handleTimeUpdate}/>
+            onLoadStart={handleLoadStart} onTimeUpdate={handleTimeUpdate}
+            onEnded={EndedAudio} />
         </div>
   )
 }

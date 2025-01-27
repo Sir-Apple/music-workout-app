@@ -109,6 +109,7 @@
     padding: 25px;
     z-index: 5;
     transition: bottom 0.2s linear;
+    gap: 5px;
 }
 
 .card .controls .volume.show{
