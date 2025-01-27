@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../assets/css/list.css'
 import musics from '../assets/data'
+import { timer } from '../utils/timer'
 
 const List = ({props: {open, setOpen, musicNumber, setMusicNumber}}) => {
   return (
@@ -34,9 +35,15 @@ const List = ({props: {open, setOpen, musicNumber, setMusicNumber}}) => {
 export default List
 
 const Duration = ({ music }) => {
-    const [duration, setDuration] = useState(0)
+    const [duration, setDuration] = useState(0);
+
     useEffect(() => {
-        
-    })
-    return <span className="duration">03:32</span>; 
+        const audio = new Audio(music.src)
+        audio.onloadedmetadata = function(){
+            if(audio.readyState > 0){
+                setDuration(audio.duration)
+            }
+        }
+    }, [music])
+    return <span className="duration">{timer(duration)}</span>; 
   };
