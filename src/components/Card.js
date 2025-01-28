@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import '../assets/css/card.css'
 import musics from '../assets/data'
 import { timer } from '../utils/timer';
+import { visualiser } from '../utils/visualiser';
 
 const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
     const [duration, setDuration] = useState(1);
@@ -12,20 +13,15 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
     const [repeat, setRepeat] = useState('repeat');
 
     const audioRef = useRef()
+    const canvasRef = useRef()
 
     function handleLoadStart(e){
-        const src = e.nativeEvent.srcElement.src;
-        const audio = new Audio(src);
-        audio.onloadedmetadata = function(){
-            if(audio.readyState > 0){
-                setDuration(audio.duration)
-            }
-        }
-        
+        setDuration(audioRef.current.duration)
         if(play) { audioRef.current.play() }
     }
 
     function handlePlayingAudio(){
+        visualiser(audioRef.current, canvasRef.current, play)
         if(play){
             audioRef.current.pause();
             setPlay(false)
@@ -111,7 +107,9 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
                 onClick={() => setOpen(prev => !prev)}>queue_music</i>
             </div>
             <div className='img'>
-                <img src={musics[musicNumber].thumbnail} alt="" />
+                <img src={musics[musicNumber].thumbnail} alt="" 
+                className={`${play ? 'playing' : ''}`}/>
+                <canvas ref={canvasRef}/>
             </div>
             <div className='details'>
                 <p className='title'>{musics[musicNumber].title}</p>
@@ -119,7 +117,12 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
             </div>
             <div className='progress'>
                 <input type="range" min={0} max={duration}
-                value={currentTime} onChange={e => changeCurrentTime(e)}/>
+                value={currentTime} onChange={e => changeCurrentTime(e)} 
+                style={{
+                   background: `linear-gradient(to right, 
+                    #008000 ${currentTime/duration*100}%,
+                    #e5e5e5 ${currentTime/duration*100}%)` 
+                }} />
             </div>
             <div className='timer'>
                 <span>{timer(currentTime)}</span>
@@ -146,12 +149,15 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
                         { volume === 0 ? 'volume_off' : 'volume_up'}
                     </i>
                     <input type="range" min={0} max={100} value={volume}
-                    onChange={e => setVolume(Number(e.target.value))}/>
+                    onChange={e => setVolume(Number(e.target.value))} 
+                    style={{
+                        background: `linear-gradient(to right, #008000 ${volume}%, #e5e5e5 ${volume}%)` 
+                     }} />
                     <span>{volume}</span>
                 </div>
             </div>
             <audio src={musics[musicNumber].src} hidden ref={audioRef}
-            onLoadStart={handleLoadStart} onTimeUpdate={handleTimeUpdate}
+            onLoadedData={handleLoadStart} onTimeUpdate={handleTimeUpdate}
             onEnded={EndedAudio} />
         </div>
   )
