@@ -1,10 +1,10 @@
 const Data = [
   {
     id: 1,
-    title: 'As You Were - TrackTribe',
+    title: 'Nothing Stopping Me',
     artist: 'TrackTribe',
     thumbnail: require('../images/img01.jpg'),
-    src: require('../musics/As You Were - TrackTribe.mp3')
+    src: require('../musics/nothing-stopping-me.mp3')
   },
   {
     id: 2,
