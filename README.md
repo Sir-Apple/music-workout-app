@@ -6,7 +6,7 @@ Technology used:
 - CSS
 
 ## Description
-An app that I am using for my personal workout and exercise at home with the 30 seconds countdown feature as well as a list of musics and soundtracks that fit for working out.
+An app I use for my personal workouts and exercises at home, featuring a 30-second countdown timer and a list of music and soundtracks perfect for working out based on my personal perspectives.
 
 ## Testing
 View web live here: https://sir-apple.github.io/music-workout-app/
