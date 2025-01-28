@@ -99,7 +99,7 @@ const Card = ({props: { musicNumber, setMusicNumber, setOpen }}) => {
     return (
         <div className='card'>
             <div className='nav'>
-                <i className="material-icons">expand_more</i>
+                {/* <i className="material-icons">expand_more</i> */}
 
                 <span>Now Playing {musicNumber + 1}/{musics.length}</span>
 
