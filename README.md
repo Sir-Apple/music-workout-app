@@ -1,3 +1,16 @@
+# My Personal Workout timing app with musics
+Technology used:
+- ReactJS
+- HTML
+- JavaScript
+- CSS
+
+## Description
+An app that I am using for my personal workout and exercise at home with the 30 seconds countdown feature as well as a list of musics and soundtracks that fit for working out.
+
+## Testing
+View web live here: https://sir-apple.github.io/music-workout-app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
