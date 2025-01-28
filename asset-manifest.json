@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/music-workout-app/static/css/main.60a951b2.css",
+    "main.js": "/music-workout-app/static/js/main.c23772fc.js",
+    "static/media/Valhalla Calling.mp3": "/music-workout-app/static/media/Valhalla Calling.653c9b1d0d390e60edf1.mp3",
+    "static/media/Mikoto.mp3": "/music-workout-app/static/media/Mikoto.ccaed60a40778acf1721.mp3",
+    "static/media/Slow Motion Deadwood.mp3": "/music-workout-app/static/media/Slow Motion Deadwood.3bed032f20562bdbc43c.mp3",
+    "static/media/Dxrk   RAVE Official Audio.mp3": "/music-workout-app/static/media/Dxrk   RAVE Official Audio.481a69dd12c20fbf332b.mp3",
+    "static/media/Go.mp3": "/music-workout-app/static/media/Go.37e72a40cff89e2a9dee.mp3",
+    "static/media/BRODYAGA FUNK PHONK.mp3": "/music-workout-app/static/media/BRODYAGA FUNK PHONK.004f6901829573390a97.mp3",
+    "static/media/Nothing Stopping Me Remix 2x.mp3": "/music-workout-app/static/media/Nothing Stopping Me Remix 2x.b1af8c04ba3d6227066c.mp3",
+    "static/media/Phonk In The End.mp3": "/music-workout-app/static/media/Phonk In The End.8b279691640df4979d14.mp3",
+    "static/media/Eternxlkz  SLAY Official Audio.mp3": "/music-workout-app/static/media/Eternxlkz  SLAY Official Audio.149f531abc31e83a7c08.mp3",
+    "static/media/bg.jpg": "/music-workout-app/static/media/bg.bfba064c530d1006481d.jpg",
+    "static/media/clock-ticking.mp3": "/music-workout-app/static/media/clock-ticking.8aec55debfde41e5abea.mp3",
+    "static/media/img07.jpg": "/music-workout-app/static/media/img07.474a8189cf0757e1f470.jpg",
+    "static/media/img09.jpg": "/music-workout-app/static/media/img09.0e33ef26aed5fd0ee464.jpg",
+    "static/media/img08.jpg": "/music-workout-app/static/media/img08.de70964f5499033871bb.jpg",
+    "static/media/img06.jpg": "/music-workout-app/static/media/img06.5137172d4d31427008e6.jpg",
+    "static/media/img03.jpg": "/music-workout-app/static/media/img03.04419ae26e8e56221cd3.jpg",
+    "static/media/img02.jpg": "/music-workout-app/static/media/img02.34d9f87b0cbdad0b0e06.jpg",
+    "static/media/img05.jpg": "/music-workout-app/static/media/img05.6f24287281e4b9414828.jpg",
+    "static/media/img04.jpg": "/music-workout-app/static/media/img04.5c75e225cc7ca7fc2b31.jpg",
+    "static/media/beep.mp3": "/music-workout-app/static/media/beep.2e4f9ee5476c9356c8af.mp3",
+    "static/media/img01.jpg": "/music-workout-app/static/media/img01.3217cf312217581ed2e9.jpg",
+    "index.html": "/music-workout-app/index.html",
+    "main.60a951b2.css.map": "/music-workout-app/static/css/main.60a951b2.css.map",
+    "main.c23772fc.js.map": "/music-workout-app/static/js/main.c23772fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60a951b2.css",
+    "static/js/main.c23772fc.js"
+  ]
+}
