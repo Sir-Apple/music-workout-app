@@ -53,7 +53,7 @@ const Timer = () => {
 
   return (
     <div className="timer-section">
-      <h2>Timer</h2>
+      <h2>Workout Timer</h2>
       <div className="timer-display">
         <span>{time}s</span>
       </div>
