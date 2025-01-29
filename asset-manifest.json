@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/music-workout-app/static/css/main.60a951b2.css",
-    "main.js": "/music-workout-app/static/js/main.c23772fc.js",
+    "main.js": "/music-workout-app/static/js/main.e179ee17.js",
     "static/media/Valhalla Calling.mp3": "/music-workout-app/static/media/Valhalla Calling.653c9b1d0d390e60edf1.mp3",
     "static/media/Mikoto.mp3": "/music-workout-app/static/media/Mikoto.ccaed60a40778acf1721.mp3",
     "static/media/Slow Motion Deadwood.mp3": "/music-workout-app/static/media/Slow Motion Deadwood.3bed032f20562bdbc43c.mp3",
@@ -25,10 +25,10 @@
     "static/media/img01.jpg": "/music-workout-app/static/media/img01.3217cf312217581ed2e9.jpg",
     "index.html": "/music-workout-app/index.html",
     "main.60a951b2.css.map": "/music-workout-app/static/css/main.60a951b2.css.map",
-    "main.c23772fc.js.map": "/music-workout-app/static/js/main.c23772fc.js.map"
+    "main.e179ee17.js.map": "/music-workout-app/static/js/main.e179ee17.js.map"
   },
   "entrypoints": [
     "static/css/main.60a951b2.css",
-    "static/js/main.c23772fc.js"
+    "static/js/main.e179ee17.js"
   ]
 }
